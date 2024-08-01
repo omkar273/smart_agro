@@ -25,8 +25,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace = "com.example.smart_agro"
-    compileSdk = 29
     ndkVersion = flutter.ndkVersion
+    compileSdkVersion 34
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

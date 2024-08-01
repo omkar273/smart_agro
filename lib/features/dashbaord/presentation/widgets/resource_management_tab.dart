@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_agro/core/components/poppins_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/build_grid.dart';
 
 class ResourceManagementTab extends StatelessWidget {
   const ResourceManagementTab({super.key});
@@ -14,6 +15,8 @@ class ResourceManagementTab extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const DashboardGrid(),
+            Vspacing(15.h),
             PoppinsText(
               'Energy Consumption tracking',
               style: TextStyle(

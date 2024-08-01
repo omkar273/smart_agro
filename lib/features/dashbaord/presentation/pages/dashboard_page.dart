@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_agro/core/components/inter_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/utils/add_new_farm.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/build_grid.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/build_item.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/climate_tile.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/farm_card.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -21,7 +23,9 @@ class DashboardPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
           child: Column(
             children: [
-              _buildDashboardGrid(),
+              const ClimateTile(),
+              Vspacing(10.h),
+              const DashboardGrid(),
               Vspacing(15.h),
               Container(
                 width: double.maxFinite,
@@ -117,25 +121,25 @@ class DashboardPage extends StatelessWidget {
           buildItem(
             icon: Icons.device_thermostat,
             label: 'Temperature',
-            value: '22',
+            value: '27 °C',
             color: Colors.red,
           ),
           buildItem(
             icon: Icons.cloudy_snowing,
             label: 'Rainfall',
-            value: '22',
+            value: 'NA',
             color: Colors.purple,
           ),
           buildItem(
             icon: Icons.water_drop_rounded,
             label: 'Water',
-            value: '22',
+            value: 'NA',
             color: Colors.blue,
           ),
           buildItem(
             icon: Icons.air,
             label: 'Wind Speed',
-            value: '22',
+            value: '22 m/s',
             color: Colors.orange,
           ),
         ],

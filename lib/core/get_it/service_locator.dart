@@ -18,6 +18,7 @@ Future<void> servicelocatorInit() async {
 
   locator.registerLazySingleton<SupabaseClient>(() => supabase.client);
 
+
 // datasources
   locator.registerLazySingleton<AuthDatasource>(
     () => AuthDatasourceImpl(client: locator()),

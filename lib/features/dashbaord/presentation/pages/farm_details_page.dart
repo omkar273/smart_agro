@@ -11,7 +11,7 @@ class FarmDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 0,
+      initialIndex: 1,
       animationDuration: const Duration(milliseconds: 600),
       length: 4,
       child: Scaffold(
