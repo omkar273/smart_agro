@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smart_agro/core/components/inter_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/utils/add_new_farm.dart';
@@ -75,6 +76,13 @@ class DashboardPage extends StatelessWidget {
 
   AppBar _buildAppBar() {
     return AppBar(
+      leading: Text(
+        "SA",
+        style: GoogleFonts.lato(
+          fontSize: 16,
+          fontWeight: FontWeight.w900,
+        ),
+      ),
       title: InterText(
         'Smart Agro',
         style: TextStyle(
@@ -83,10 +91,10 @@ class DashboardPage extends StatelessWidget {
         ),
       ),
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.search),
-        ),
+        // IconButton(
+        //   onPressed: () {},
+        //   icon: const Icon(Icons.search),
+        // ),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.notifications),

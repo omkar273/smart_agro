@@ -1,6 +1,6 @@
 {
-    "name": "smart_agro",
-    "short_name": "smart_agro",
+    "name": "Smart Agro",
+    "short_name": "Smart Agro",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

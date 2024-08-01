@@ -10,7 +10,7 @@
 
 
     <application
-        android:label="smart_agro"
+        android:label="Smart Agro"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

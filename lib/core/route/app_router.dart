@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:smart_agro/core/get_it/service_locator.dart';
 import 'package:smart_agro/core/pages/bottom_bar_page.dart';
 import 'package:smart_agro/core/pages/landing_page.dart';
+import 'package:smart_agro/core/pages/language_selection_page.dart';
 import 'package:smart_agro/features/auth/presentation/pages/login_page.dart';
 import 'package:smart_agro/features/auth/presentation/pages/otp_verification_page.dart';
 import 'package:smart_agro/features/dashbaord/presentation/pages/crop_selector.dart';
@@ -31,6 +32,14 @@ class Approuter {
 
   Approuter.init() {
     final List<RouteBase> routes = <RouteBase>[
+      GoRoute(
+        path: LanguageSelectionPage.routePath,
+        name: LanguageSelectionPage.routeName,
+        pageBuilder: (context, state) => getPage(
+          child: const LanguageSelectionPage(),
+          state: state,
+        ),
+      ),
       GoRoute(
         path: LoginPage.routePath,
         name: LoginPage.routeName,
@@ -94,7 +103,7 @@ class Approuter {
       )
     ];
     router = GoRouter(
-      initialLocation: LoginPage.routePath,
+      initialLocation: LanguageSelectionPage.routePath,
       navigatorKey: parentNavigatorKey,
       routes: routes,
       redirect: redirect,
