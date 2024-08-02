@@ -60,14 +60,14 @@ class FarmModel with EquatableMixin {
 
   factory FarmModel.fromMap(Map<String, dynamic> map) {
     return FarmModel(
-      name: (map['name'] ?? '') as String,
-      crop: (map['crop'] ?? '') as String,
-      moisture: (map['moisture'] ?? 0.0) as double,
-      lat: (map['lat'] ?? 0.0) as double,
-      lng: (map['lng'] ?? 0.0) as double,
-      temp: (map['temp'] ?? 0.0) as double,
-      wheather: (map['wheather'] ?? '') as String,
-      ownerId: (map['ownerId'] ?? '') as String,
+      name: map['name'] ?? '',
+      crop: map['crop'] ?? '',
+      moisture: (map['moisture'] ?? 0.0).toDouble(),
+      lat: (map['lat'] ?? 0.0).toDouble(),
+      lng: (map['lng'] ?? 0.0).toDouble(),
+      temp: (map['temp'] ?? 0.0).toDouble(),
+      wheather: map['wheather'] ?? '',
+      ownerId: map['ownerId'] ?? '',
     );
   }
 

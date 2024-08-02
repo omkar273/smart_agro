@@ -1,181 +1,191 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, non_constant_identifier_names
 import 'dart:convert';
 
-import 'package:equatable/equatable.dart';
-
-class CropModel with EquatableMixin {
+class CropModel {
+  final int id;
   final String name;
-  final String description;
-  final int tenure_in_months;
-  final double price;
-  final List<int> sowing_months;
-  final List<String> soil;
-  final List<String> nutrients;
-  final String wheather;
-  final String season;
-  final List<String> fertilizers;
-  final int harvest_time_in_months;
-  final String care_for_good_harvest;
-  final String preffered_pesticides;
-  final String crop_family;
-  final String pH_value;
-  final String type_of_crop;
-  final double min_temp;
-  final double max_temp;
-  final double min_humidity;
-  final double max_humidity;
-  final double min_rainfall;
-  final double max_rainfall;
-  final double nitrogen_req;
-  final double phosphorous_req;
-  final double postassium_req;
-  const CropModel({
+  final String? description;
+  final int? tenureInMonths;
+  final double? price;
+  final String? weather;
+  final String? season;
+  final int? harvestTimeInMonths;
+  final String? careForGoodHarvest;
+  final String? preferredPesticides;
+  final String? cropFamily;
+  final double? minPhValue;
+  final String? typeOfCrop;
+  final double? minTemp;
+  final double? maxTemp;
+  final double? minHumidity;
+  final double? maxHumidity;
+  final double? minRainfall;
+  final double? maxRainfall;
+  final double? nitrogenReq;
+  final double? phosphorousReq;
+  final double? potassiumReq;
+  final double? maxPhValue;
+  final String? imgUrl;
+  final String fertilizers;
+  final String soil;
+  final String nutrients;
+  final int sowingMonths;
+
+  CropModel({
+    required this.id,
     required this.name,
-    required this.description,
-    required this.tenure_in_months,
-    required this.price,
-    required this.sowing_months,
-    required this.soil,
-    required this.nutrients,
-    required this.wheather,
-    required this.season,
-    required this.fertilizers,
-    required this.harvest_time_in_months,
-    required this.care_for_good_harvest,
-    required this.preffered_pesticides,
-    required this.crop_family,
-    required this.pH_value,
-    required this.type_of_crop,
-    required this.min_temp,
-    required this.max_temp,
-    required this.min_humidity,
-    required this.max_humidity,
-    required this.min_rainfall,
-    required this.max_rainfall,
-    required this.nitrogen_req,
-    required this.phosphorous_req,
-    required this.postassium_req,
+    this.description,
+    this.tenureInMonths,
+    this.price,
+    this.weather,
+    this.season,
+    this.harvestTimeInMonths,
+    this.careForGoodHarvest,
+    this.preferredPesticides,
+    this.cropFamily,
+    this.minPhValue,
+    this.typeOfCrop,
+    this.minTemp,
+    this.maxTemp,
+    this.minHumidity,
+    this.maxHumidity,
+    this.minRainfall,
+    this.maxRainfall,
+    this.nitrogenReq,
+    this.phosphorousReq,
+    this.potassiumReq,
+    this.maxPhValue,
+    this.imgUrl,
+    this.fertilizers = 'Compost',
+    this.soil = 'Loamy',
+    this.nutrients = 'N,P,K',
+    this.sowingMonths = 3,
   });
 
   CropModel copyWith({
+    int? id,
     String? name,
     String? description,
-    int? tenure_in_months,
+    int? tenureInMonths,
     double? price,
-    List<int>? sowing_months,
-    List<String>? soil,
-    List<String>? nutrients,
-    String? wheather,
+    String? weather,
     String? season,
-    List<String>? fertilizers,
-    int? harvest_time_in_months,
-    String? care_for_good_harvest,
-    String? preffered_pesticides,
-    String? crop_family,
-    String? pH_value,
-    String? type_of_crop,
-    double? min_temp,
-    double? max_temp,
-    double? min_humidity,
-    double? max_humidity,
-    double? min_rainfall,
-    double? max_rainfall,
-    double? nitrogen_req,
-    double? phosphorous_req,
-    double? postassium_req,
+    int? harvestTimeInMonths,
+    String? careForGoodHarvest,
+    String? preferredPesticides,
+    String? cropFamily,
+    double? minPhValue,
+    String? typeOfCrop,
+    double? minTemp,
+    double? maxTemp,
+    double? minHumidity,
+    double? maxHumidity,
+    double? minRainfall,
+    double? maxRainfall,
+    double? nitrogenReq,
+    double? phosphorousReq,
+    double? potassiumReq,
+    double? maxPhValue,
+    String? imgUrl,
+    String? fertilizers,
+    String? soil,
+    String? nutrients,
+    int? sowingMonths,
   }) {
     return CropModel(
+      id: id ?? this.id,
       name: name ?? this.name,
       description: description ?? this.description,
-      tenure_in_months: tenure_in_months ?? this.tenure_in_months,
+      tenureInMonths: tenureInMonths ?? this.tenureInMonths,
       price: price ?? this.price,
-      sowing_months: sowing_months ?? this.sowing_months,
+      weather: weather ?? this.weather,
+      season: season ?? this.season,
+      harvestTimeInMonths: harvestTimeInMonths ?? this.harvestTimeInMonths,
+      careForGoodHarvest: careForGoodHarvest ?? this.careForGoodHarvest,
+      preferredPesticides: preferredPesticides ?? this.preferredPesticides,
+      cropFamily: cropFamily ?? this.cropFamily,
+      minPhValue: minPhValue ?? this.minPhValue,
+      typeOfCrop: typeOfCrop ?? this.typeOfCrop,
+      minTemp: minTemp ?? this.minTemp,
+      maxTemp: maxTemp ?? this.maxTemp,
+      minHumidity: minHumidity ?? this.minHumidity,
+      maxHumidity: maxHumidity ?? this.maxHumidity,
+      minRainfall: minRainfall ?? this.minRainfall,
+      maxRainfall: maxRainfall ?? this.maxRainfall,
+      nitrogenReq: nitrogenReq ?? this.nitrogenReq,
+      phosphorousReq: phosphorousReq ?? this.phosphorousReq,
+      potassiumReq: potassiumReq ?? this.potassiumReq,
+      maxPhValue: maxPhValue ?? this.maxPhValue,
+      imgUrl: imgUrl ?? this.imgUrl,
+      fertilizers: fertilizers ?? this.fertilizers,
       soil: soil ?? this.soil,
       nutrients: nutrients ?? this.nutrients,
-      wheather: wheather ?? this.wheather,
-      season: season ?? this.season,
-      fertilizers: fertilizers ?? this.fertilizers,
-      harvest_time_in_months:
-          harvest_time_in_months ?? this.harvest_time_in_months,
-      care_for_good_harvest:
-          care_for_good_harvest ?? this.care_for_good_harvest,
-      preffered_pesticides: preffered_pesticides ?? this.preffered_pesticides,
-      crop_family: crop_family ?? this.crop_family,
-      pH_value: pH_value ?? this.pH_value,
-      type_of_crop: type_of_crop ?? this.type_of_crop,
-      min_temp: min_temp ?? this.min_temp,
-      max_temp: max_temp ?? this.max_temp,
-      min_humidity: min_humidity ?? this.min_humidity,
-      max_humidity: max_humidity ?? this.max_humidity,
-      min_rainfall: min_rainfall ?? this.min_rainfall,
-      max_rainfall: max_rainfall ?? this.max_rainfall,
-      nitrogen_req: nitrogen_req ?? this.nitrogen_req,
-      phosphorous_req: phosphorous_req ?? this.phosphorous_req,
-      postassium_req: postassium_req ?? this.postassium_req,
+      sowingMonths: sowingMonths ?? this.sowingMonths,
     );
   }
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    return {
+      'id': id,
       'name': name,
       'description': description,
-      'tenure_in_months': tenure_in_months,
+      'tenure_in_months': tenureInMonths,
       'price': price,
-      'sowing_months': sowing_months,
+      'weather': weather,
+      'season': season,
+      'harvest_time_in_months': harvestTimeInMonths,
+      'care_for_good_harvest': careForGoodHarvest,
+      'preferred_pesticides': preferredPesticides,
+      'crop_family': cropFamily,
+      'min_ph_value': minPhValue,
+      'type_of_crop': typeOfCrop,
+      'min_temp': minTemp,
+      'max_temp': maxTemp,
+      'min_humidity': minHumidity,
+      'max_humidity': maxHumidity,
+      'min_rainfall': minRainfall,
+      'max_rainfall': maxRainfall,
+      'nitrogen_req': nitrogenReq,
+      'phosphorous_req': phosphorousReq,
+      'potassium_req': potassiumReq,
+      'max_ph_value': maxPhValue,
+      'img_url': imgUrl,
+      'fertilizers': fertilizers,
       'soil': soil,
       'nutrients': nutrients,
-      'wheather': wheather,
-      'season': season,
-      'fertilizers': fertilizers,
-      'harvest_time_in_months': harvest_time_in_months,
-      'care_for_good_harvest': care_for_good_harvest,
-      'preffered_pesticides': preffered_pesticides,
-      'crop_family': crop_family,
-      'pH_value': pH_value,
-      'type_of_crop': type_of_crop,
-      'min_temp': min_temp,
-      'max_temp': max_temp,
-      'min_humidity': min_humidity,
-      'max_humidity': max_humidity,
-      'min_rainfall': min_rainfall,
-      'max_rainfall': max_rainfall,
-      'nitrogen_req': nitrogen_req,
-      'phosphorous_req': phosphorous_req,
-      'postassium_req': postassium_req,
+      'sowing_months': sowingMonths,
     };
   }
 
   factory CropModel.fromMap(Map<String, dynamic> map) {
     return CropModel(
-      name: (map['name'] ?? '') as String,
-      description: (map['description'] ?? '') as String,
-      tenure_in_months: (map['tenure_in_months'] ?? 0) as int,
-      price: (map['price'] ?? 0.0) as double,
-      sowing_months:
-          List<int>.from((map['sowing_months'] ?? const <int>[]) as List<int>),
-      soil:
-          List<String>.from((map['soil'] ?? const <String>[]) as List<String>),
-      nutrients: List<String>.from(
-          (map['nutrients'] ?? const <String>[]) as List<String>),
-      wheather: (map['wheather'] ?? '') as String,
-      season: (map['season'] ?? '') as String,
-      fertilizers: List<String>.from(
-          (map['fertilizers'] ?? const <String>[]) as List<String>),
-      harvest_time_in_months: (map['harvest_time_in_months'] ?? 0) as int,
-      care_for_good_harvest: (map['care_for_good_harvest'] ?? '') as String,
-      preffered_pesticides: (map['preffered_pesticides'] ?? '') as String,
-      crop_family: (map['crop_family'] ?? '') as String,
-      pH_value: (map['pH_value'] ?? '') as String,
-      type_of_crop: (map['type_of_crop'] ?? '') as String,
-      min_temp: (map['min_temp'] ?? 0.0) as double,
-      max_temp: (map['max_temp'] ?? 0.0) as double,
-      min_humidity: (map['min_humidity'] ?? 0.0) as double,
-      max_humidity: (map['max_humidity'] ?? 0.0) as double,
-      min_rainfall: (map['min_rainfall'] ?? 0.0) as double,
-      max_rainfall: (map['max_rainfall'] ?? 0.0) as double,
-      nitrogen_req: (map['nitrogen_req'] ?? 0.0) as double,
-      phosphorous_req: (map['phosphorous_req'] ?? 0.0) as double,
-      postassium_req: (map['postassium_req'] ?? 0.0) as double,
+      id: map['id'] as int,
+      name: map['name'] as String,
+      description: map['description'] as String?,
+      tenureInMonths: map['tenure_in_months'] as int?,
+      price: map['price'] as double?,
+      weather: map['weather'] as String?,
+      season: map['season'] as String?,
+      harvestTimeInMonths: map['harvest_time_in_months'] as int?,
+      careForGoodHarvest: map['care_for_good_harvest'] as String?,
+      preferredPesticides: map['preferred_pesticides'] as String?,
+      cropFamily: map['crop_family'] as String?,
+      typeOfCrop: map['type_of_crop'] as String?,
+      minTemp: map['min_temp'] as double?,
+      maxTemp: map['max_temp'] as double?,
+      minHumidity: (map['min_humidity']).toDouble() as double?,
+      maxHumidity: (map['max_humidity']).toDouble() as double?,
+      minRainfall: (map['min_rainfall']).toDouble() as double?,
+      maxRainfall: (map['max_rainfall']).toDouble() as double?,
+      nitrogenReq: (map['nitrogen_req']).toDouble() as double?,
+      phosphorousReq: (map['phosphorous_req']).toDouble() as double?,
+      potassiumReq: (map['potassium_req']).toDouble() as double?,
+      maxPhValue: (map['max_ph_value']).toDouble() as double?,
+      minPhValue: (map['min_ph_value']).toDouble() as double?,
+      imgUrl: map['img_url'] as String?,
+      fertilizers: map['fertilizers'] as String? ?? 'Compost',
+      soil: map['soil'] as String? ?? 'Loamy',
+      nutrients: map['nutrients'] as String? ?? 'N,P,K',
+      sowingMonths: map['sowing_months'] as int? ?? 3,
     );
   }
 
@@ -183,38 +193,4 @@ class CropModel with EquatableMixin {
 
   factory CropModel.fromJson(String source) =>
       CropModel.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  @override
-  bool get stringify => true;
-
-  @override
-  List<Object> get props {
-    return [
-      name,
-      description,
-      tenure_in_months,
-      price,
-      sowing_months,
-      soil,
-      nutrients,
-      wheather,
-      season,
-      fertilizers,
-      harvest_time_in_months,
-      care_for_good_harvest,
-      preffered_pesticides,
-      crop_family,
-      pH_value,
-      type_of_crop,
-      min_temp,
-      max_temp,
-      min_humidity,
-      max_humidity,
-      min_rainfall,
-      max_rainfall,
-      nitrogen_req,
-      phosphorous_req,
-      postassium_req,
-    ];
-  }
 }

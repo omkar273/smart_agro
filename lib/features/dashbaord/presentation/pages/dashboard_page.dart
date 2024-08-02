@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:smart_agro/core/components/inter_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/utils/add_new_farm.dart';
-import 'package:smart_agro/features/dashbaord/presentation/widgets/build_grid.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/build_item.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/climate_tile.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/dashboard_crops_section.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/dashboard_my_farms_section.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/farm_card.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/tools_section.dart';
 
@@ -19,7 +19,6 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
@@ -28,6 +27,10 @@ class DashboardPage extends StatelessWidget {
               const ClimateTile(),
               Vspacing(10.h),
               const DashboardToolsSection(),
+              Vspacing(10.h),
+              const MyfarmsSection(),
+              Vspacing(10.h),
+              const DashboardCropsSection(),
               Vspacing(15.h),
               Container(
                 width: double.maxFinite,
@@ -72,42 +75,6 @@ class DashboardPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-      elevation: 2,
-      shadowColor: Colors.grey,
-      leading: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "SA",
-            textAlign: TextAlign.center,
-            style: GoogleFonts.lato(
-              fontSize: 20,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-        ],
-      ),
-      title: InterText(
-        'Welcome to Smart Agro',
-        style: TextStyle(
-          fontSize: 14.sp,
-        ),
-      ),
-      actions: [
-        // IconButton(
-        //   onPressed: () {},
-        //   icon: const Icon(Icons.search),
-        // ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.notifications),
-        ),
-      ],
     );
   }
 

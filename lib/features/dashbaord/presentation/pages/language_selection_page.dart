@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_agro/core/components/poppins_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/route/app_router.dart';
-import 'package:smart_agro/core/theme/colors.dart';
 import 'package:smart_agro/features/auth/presentation/pages/login_page.dart';
 
 class LanguageSelectionPage extends StatefulWidget {

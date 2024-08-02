@@ -1,0 +1,4 @@
+id,name,description,tenure_in_months,price,sowing_months,soil,nutrients,wheather,season,fertilizers,harvest_time_in_months,care_for_good_harvest,preffered_pesticides,crop_family,pH_value,type_of_crop,min_temp,max_temp,min_humidity,max_humidity,min_rainfall,max_rainfall,nitrogen_req,phosphorous_req,postassium_req
+1,"Wheat","Common wheat",12,20.5,"{3,4,5}","{'Loam','Clay'}","{'Nitrogen','Phosphorus'}","Temperate","Spring","{'Nitrogen-rich'}",9,"Regular watering","{'Glyphosate'}","Grasses","6.5-7.0","Cereal",10,25,30,70,500,800,50,40,30
+2,"Corn","Sweet corn",6,15.0,"{5,6}","{'Sandy','Loam'}","{'Potassium'}","Warm","Summer","{'Potassium-rich'}",5,"Minimal care","None","Cereals","5.5-6.5","Grain",12,30,40,80,600,1000,60,50,40
+3,"Rice","Asian rice",8,18.0,"{6,7}","{'Clay'}","{'Phosphorus','Potassium'}","Tropical","Monsoon","{'Phosphorus-rich'}",7,"Flooded fields","{'Herbicides'}","Grasses","6.0-6.8","Grain",15,35,50,90,800,1200,70,60,50

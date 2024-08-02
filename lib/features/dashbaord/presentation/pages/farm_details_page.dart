@@ -1,15 +1,21 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:smart_agro/core/components/inter_text.dart';
+import 'package:smart_agro/core/models/farm_model.dart';
 import 'package:smart_agro/features/dashbaord/presentation/pages/plant_monitoring_tab.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/resource_management_tab.dart';
 
 class FarmDetailsPage extends StatelessWidget {
-  const FarmDetailsPage({super.key});
+  const FarmDetailsPage({super.key, required this.farm});
+  final FarmModel farm;
   static const routeName = 'FarmDetailsPage';
   static const routePath = '/FarmDetailsPage';
+
   @override
   Widget build(BuildContext context) {
+    log(farm.toString());
     return DefaultTabController(
       initialIndex: 1,
       animationDuration: const Duration(milliseconds: 600),

@@ -11,7 +11,7 @@ class FinancialReportPage extends StatelessWidget {
       appBar: AppBar(
         title: const PoppinsText('Financial Report'),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [],

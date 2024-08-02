@@ -62,8 +62,14 @@ class AuthCubit extends Cubit<AuthState> {
       final AuthResponse res =
           await locator<SupabaseClient>().auth.signInWithPassword(
                 password: password,
-                phone: phone,
+                email: '$phone@gmail.com',
               );
+
+      // final AuthResponse res =
+      //     await locator<SupabaseClient>().auth.signInWithPassword(
+      //           password: password,
+      //           phone: phone,
+      //         );
       if (res.user == null) {
         emit(const AuthErrorState(errorMsg: 'Signup failed'));
       } else {

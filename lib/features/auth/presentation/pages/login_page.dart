@@ -73,7 +73,7 @@ class LoginPage extends StatelessWidget {
                   log(phone.completeNumber);
 
                   if (phone.isValidNumber()) {
-                    context.read<AuthCubit>().signupUsingPhone(
+                    context.read<AuthCubit>().loginWithPhone(
                           phone.completeNumber,
                           'Test@123',
                         );
