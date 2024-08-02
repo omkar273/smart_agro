@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:smart_agro/core/components/inter_text.dart';
+import 'package:smart_agro/core/components/poppins_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/constants/asset_path.dart';
 import 'package:smart_agro/core/route/app_router.dart';
@@ -61,6 +62,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               Vspacing(20.h),
+              const PoppinsText('test phone : 1234567890'),
               IntlPhoneField(
                 decoration: const InputDecoration(
                   labelText: 'Enter Phone Number',
@@ -73,8 +75,9 @@ class LoginPage extends StatelessWidget {
                   log(phone.completeNumber);
 
                   if (phone.isValidNumber()) {
+                    log('calling login function');
                     context.read<AuthCubit>().loginWithPhone(
-                          phone.completeNumber,
+                          '+918805347568',
                           'Test@123',
                         );
                   }
@@ -83,7 +86,11 @@ class LoginPage extends StatelessWidget {
               Vspacing(10.h),
               ElevatedButton(
                 onPressed: () {
-                  Approuter.router.push(OtpVerificationPage.routePath);
+                  context.read<AuthCubit>().loginWithPhone(
+                        '+918805347568',
+                        'Test@123',
+                      );
+                  // Approuter.router.push(OtpVerificationPage.routePath);
                 },
                 child: const InterText('Send OTP'),
               )
@@ -102,8 +109,8 @@ class LoginPage extends StatelessWidget {
       Approuter.router.pushNamed(OtpVerificationPage.routeName);
       showTextSnackbar('Otp Sent');
     } else if (state is AuthLoggedIn) {
-      Approuter.router.pop();
-      Approuter.router.pushNamed(DashboardPage.routeName);
+      // Approuter.router.pop();
+      Approuter.router.goNamed(DashboardPage.routeName);
       showTextSnackbar('User logged in');
     } else if (state is AuthErrorState) {
       Approuter.router.pop();

@@ -64,7 +64,7 @@ class AuthCubit extends Cubit<AuthState> {
                 password: password,
                 email: '$phone@gmail.com',
               );
-
+      log('email: $phone@gmail.com \n password: $password');
       // final AuthResponse res =
       //     await locator<SupabaseClient>().auth.signInWithPassword(
       //           password: password,

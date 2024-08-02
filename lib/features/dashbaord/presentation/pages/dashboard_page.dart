@@ -26,51 +26,52 @@ class DashboardPage extends StatelessWidget {
             children: [
               const ClimateTile(),
               Vspacing(10.h),
+              const FarmCard(),
+              Vspacing(10.h),
               const DashboardToolsSection(),
               Vspacing(10.h),
               const MyfarmsSection(),
               Vspacing(10.h),
               const DashboardCropsSection(),
               Vspacing(15.h),
-              Container(
-                width: double.maxFinite,
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      spreadRadius: -4,
-                      blurRadius: 8,
-                      offset: Offset(0, 4.h),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        InterText(
-                          'Farms',
-                          style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () => addNewFarm(),
-                          icon: const Icon(Icons.add),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   width: double.maxFinite,
+              //   padding: EdgeInsets.all(12.r),
+              //   decoration: BoxDecoration(
+              //     color: Colors.white,
+              //     borderRadius: BorderRadius.circular(10.r),
+              //     boxShadow: [
+              //       BoxShadow(
+              //         color: Colors.black.withOpacity(0.2),
+              //         spreadRadius: -4,
+              //         blurRadius: 8,
+              //         offset: Offset(0, 4.h),
+              //       ),
+              //     ],
+              //   ),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //         children: [
+              //           InterText(
+              //             'Farms',
+              //             style: TextStyle(
+              //               fontSize: 20.sp,
+              //               fontWeight: FontWeight.w700,
+              //             ),
+              //           ),
+              //           IconButton(
+              //             onPressed: () => addNewFarm(),
+              //             icon: const Icon(Icons.add),
+              //           )
+              //         ],
+              //       ),
+              //     ],
+              //   ),
+              // ),
               Vspacing(15.h),
-              const FarmCard()
             ],
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:smart_agro/core/components/poppins_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/models/crop_model.dart';
 import 'package:smart_agro/core/route/app_router.dart';
+import 'package:smart_agro/features/dashbaord/presentation/pages/crop_details_page.dart';
 import 'package:smart_agro/features/dashbaord/presentation/pages/crop_selector.dart';
 import 'package:smart_agro/features/dashbaord/presentation/utils/get_crops.dart';
 
@@ -78,7 +79,10 @@ class _DashboardCropsSectionState extends State<DashboardCropsSection> {
                       subtitle: Text('Crop: ${crop.cropFamily}'),
                       trailing: IconButton(
                         icon: const Icon(Icons.arrow_forward_ios_rounded),
-                        onPressed: () {},
+                        onPressed: () => Approuter.router.pushNamed(
+                          CropDetailsPage.routeName,
+                          extra: crop,
+                        ),
                       ),
                     ),
                   );

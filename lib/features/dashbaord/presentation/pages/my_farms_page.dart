@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_agro/core/components/poppins_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/models/farm_model.dart';
+import 'package:smart_agro/core/route/app_router.dart';
+import 'package:smart_agro/features/dashbaord/presentation/pages/farm_details_page.dart';
 import 'package:smart_agro/features/dashbaord/presentation/utils/get_farms.dart';
 
 class MyFarmsPage extends StatelessWidget {
@@ -51,7 +53,10 @@ class MyFarmsPage extends StatelessWidget {
                           subtitle: Text('Crop: ${farm.crop}'),
                           trailing: IconButton(
                             icon: const Icon(Icons.arrow_forward_ios_rounded),
-                            onPressed: () {},
+                            onPressed: () => Approuter.router.push(
+                              FarmDetailsPage.routePath,
+                              extra: farm,
+                            ),
                           ),
                         ),
                       );

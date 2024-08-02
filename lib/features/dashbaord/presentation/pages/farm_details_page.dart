@@ -6,7 +6,9 @@ import 'package:smart_agro/core/components/inter_text.dart';
 import 'package:smart_agro/core/models/farm_model.dart';
 import 'package:smart_agro/features/dashbaord/presentation/pages/plant_monitoring_tab.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/farm_details_home_tab.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/finance_tab.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/resource_management_tab.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/water_management_tab.dart';
 
 class FarmDetailsPage extends StatelessWidget {
   const FarmDetailsPage({super.key, required this.farm});
@@ -20,7 +22,7 @@ class FarmDetailsPage extends StatelessWidget {
     return DefaultTabController(
       initialIndex: 1,
       animationDuration: const Duration(milliseconds: 600),
-      length: 4,
+      length: 5,
       child: Scaffold(
         appBar: AppBar(
           title: const InterText('Farm details'),
@@ -42,6 +44,10 @@ class FarmDetailsPage extends StatelessWidget {
                 icon: Icon(LucideIcons.earth),
                 text: 'Soil',
               ),
+              Tab(
+                icon: Icon(LucideIcons.indian_rupee),
+                text: 'Financial Planning',
+              ),
             ],
           ),
         ),
@@ -49,8 +55,9 @@ class FarmDetailsPage extends StatelessWidget {
           children: [
             FarmDetailsHomeTab(),
             ResourceManagementTab(),
-            Icon(Icons.directions_bike),
-            PlantMonitoringTab()
+            WaterManagementTab(),
+            PlantMonitoringTab(),
+            FinanceTab()
           ],
         ),
       ),
