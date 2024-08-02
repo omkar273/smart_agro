@@ -5,6 +5,7 @@ import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:smart_agro/core/components/inter_text.dart';
 import 'package:smart_agro/core/models/farm_model.dart';
 import 'package:smart_agro/features/dashbaord/presentation/pages/plant_monitoring_tab.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/farm_details_home_tab.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/resource_management_tab.dart';
 
 class FarmDetailsPage extends StatelessWidget {
@@ -46,7 +47,7 @@ class FarmDetailsPage extends StatelessWidget {
         ),
         body: const TabBarView(
           children: [
-            Icon(Icons.directions_car),
+            FarmDetailsHomeTab(),
             ResourceManagementTab(),
             Icon(Icons.directions_bike),
             PlantMonitoringTab()
