@@ -7,7 +7,8 @@ class AppTheme {
       elevation: 0,
       backgroundColor: Color(0xffffffff),
     ),
-    scaffoldBackgroundColor: const Color(0xffeae5c5),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 246, 243, 227),
+    // scaffoldBackgroundColor: const Color(0xffeae5c5),
     colorScheme: const ColorScheme.light(
       surface: Color.fromARGB(255, 255, 255, 255),
       error: Color(0xffb00020),
@@ -16,9 +17,9 @@ class AppTheme {
       inverseSurface: Color(0xff000000),
       onPrimary: Color(0xff000000),
       primary: AppColors.primary,
-      secondary: Color(0xff43165c),
+      secondary: Color.fromARGB(255, 22, 92, 27),
       shadow: Color(0xff000000),
-      surfaceTint: Color(0xff6200ee),
+      surfaceTint: Color.fromARGB(255, 130, 229, 121),
       tertiary: Color(0xff03dac6),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

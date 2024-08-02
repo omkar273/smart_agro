@@ -8,6 +8,7 @@ import 'package:smart_agro/features/dashbaord/presentation/widgets/build_grid.da
 import 'package:smart_agro/features/dashbaord/presentation/widgets/build_item.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/climate_tile.dart';
 import 'package:smart_agro/features/dashbaord/presentation/widgets/farm_card.dart';
+import 'package:smart_agro/features/dashbaord/presentation/widgets/tools_section.dart';
 
 class DashboardPage extends StatelessWidget {
   static const routeName = 'DashboardPage';
@@ -26,7 +27,7 @@ class DashboardPage extends StatelessWidget {
             children: [
               const ClimateTile(),
               Vspacing(10.h),
-              const DashboardGrid(),
+              const DashboardToolsSection(),
               Vspacing(15.h),
               Container(
                 width: double.maxFinite,
@@ -76,18 +77,25 @@ class DashboardPage extends StatelessWidget {
 
   AppBar _buildAppBar() {
     return AppBar(
-      leading: Text(
-        "SA",
-        style: GoogleFonts.lato(
-          fontSize: 16,
-          fontWeight: FontWeight.w900,
-        ),
+      elevation: 2,
+      shadowColor: Colors.grey,
+      leading: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "SA",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.lato(
+              fontSize: 20,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+        ],
       ),
       title: InterText(
-        'Smart Agro',
+        'Welcome to Smart Agro',
         style: TextStyle(
-          fontWeight: FontWeight.w700,
-          fontSize: 28.sp,
+          fontSize: 14.sp,
         ),
       ),
       actions: [

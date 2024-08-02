@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" id="news">
+    <defs>
+        <linearGradient id="a">
+            <stop offset="0" stop-color="#ffffff"></stop>
+            <stop offset="1" stop-color="#0dff00"></stop>
+        </linearGradient>
+        <linearGradient id="b" x1="1073.403" x2="1097.116" y1="516.451" y2="544.308"
+            gradientTransform="translate(-856.183 614.331) scale(.80097)" gradientUnits="userSpaceOnUse"
+            xlink:href="#a"></linearGradient>
+    </defs>
+    <g transform="translate(0 -1027.362)">
+        <rect width="25" height="25" y="1027.362" fill="url(#b)" rx="5.283" ry="5.283"></rect>
+        <path fill="#ffffff"
+            style="text-indent:0;text-align:start;line-height:normal;text-transform:none;block-progression:tb"
+            d="M5 1034.363v10.483c0 .85.708 1.515 1.54 1.515h12.964c.787 0 1.496-.582 1.496-1.373v-5.625h-2v-5H5zm1 .998h12v1.998H6v-1.998zm0 2.998h12V1045.361H6.54c-.242 0-.54-.284-.54-.515v-6.487zm1 .994v5.008h5v-5.008H7zm6 .01v1h4v-1h-4zm-5 .993h3v3.007H8v-3.007zm11 .01h1v4.625c0 .174-.184.375-.5.375s-.5-.201-.5-.375v-4.625zm-6 1v1h4v-1h-4zm0 2v1h4v-1h-4z"
+            color="#e10000" font-family="sans-serif" font-weight="400" overflow="visible"></path>
+    </g>
+</svg>

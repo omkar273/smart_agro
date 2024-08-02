@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_agro/core/components/poppins_text.dart';
-import 'package:smart_agro/core/components/spacing.dart';
 import 'package:intl/intl.dart';
 
 String getCurrentDate() {
@@ -18,86 +17,33 @@ class ClimateTile extends StatefulWidget {
 }
 
 class _ClimateTileState extends State<ClimateTile> {
-  late Size _size;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
-    _size = MediaQuery.of(context).size;
-
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return ListTile(
+      tileColor: Colors.white,
+      shape: const RoundedRectangleBorder(),
+      title: PoppinsText(
+        'Today, Pathardi Phata',
+        style: TextStyle(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      subtitle: const PoppinsText(
+        'showers 1mm rain',
+      ),
+      trailing: Row(
+        mainAxisSize:
+            MainAxisSize.min, // This ensures the Row only takes needed space
         children: [
-          Container(
-            padding: EdgeInsets.all(5.r),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade100.withOpacity(0.50),
-              borderRadius: BorderRadius.circular(50.r),
-              border: Border.all(
-                color: Colors.green,
-              ),
-            ),
-            width: _size.width * 0.9,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Hspacing(0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Nashik, ${getCurrentDate()}',
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      "Rain 22 c/24 c",
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.normal,
-                      ),
-                    ),
-                  ],
-                ),
-                const Row(
-                  children: [
-                    PoppinsText(
-                      '23 ',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Icon(Icons.cloud),
-                  ],
-                )
-              ],
+          PoppinsText(
+            '23 °',
+            style: TextStyle(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
             ),
           ),
-          Hspacing(15.w),
-          Container(
-            width: _size.width * 0.75,
-            color: Colors.green, // Added for visibility
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "More Climate Info",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ],
-            ),
-          ),
-          // Add more containers if needed
+          const Icon(Icons.cloudy_snowing),
         ],
       ),
     );

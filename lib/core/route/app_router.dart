@@ -124,7 +124,9 @@ class Approuter {
     final User? user = locator<SupabaseClient>().auth.currentUser;
     final bool isLoggedIn = user != null;
 
-    if (state.matchedLocation == LoginPage.routePath && isLoggedIn) {
+    if ((state.matchedLocation == LoginPage.routePath ||
+            state.matchedLocation == LanguageSelectionPage.routePath) &&
+        isLoggedIn) {
       return DashboardPage.routePath;
     }
     return null;

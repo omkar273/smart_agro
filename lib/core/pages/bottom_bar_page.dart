@@ -14,8 +14,8 @@ class BottomBarPage extends StatelessWidget {
       body: shell,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: shell.currentIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        // showSelectedLabels: false,
+        // showUnselectedLabels: false,
         onTap: (value) => shell.goBranch(value),
         items: const [
           BottomNavigationBarItem(
