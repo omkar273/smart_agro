@@ -4,7 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_agro/core/components/poppins_text.dart';
 import 'package:smart_agro/core/components/spacing.dart';
 import 'package:smart_agro/core/constants/asset_path.dart';
+import 'package:smart_agro/core/route/app_router.dart';
 import 'package:smart_agro/core/theme/colors.dart';
+import 'package:smart_agro/core/utils/show_text_snackbar.dart';
+import 'package:smart_agro/features/dashbaord/presentation/pages/crop_selector.dart';
+import 'package:smart_agro/features/dashbaord/presentation/pages/my_farms_page.dart';
+import 'package:smart_agro/features/dashbaord/presentation/pages/store_page.dart';
 
 class DashboardToolsSection extends StatefulWidget {
   const DashboardToolsSection({super.key});
@@ -27,37 +32,45 @@ class _DashboardToolsSectionState extends State<DashboardToolsSection> {
     // TODO: Add cultivation tips,pests and diseases , alerts , financial report , profit calculator , IOT sensors , crop health
 
     List<Widget> toolsItems = [
-      const ToolsItem(
+      ToolsItem(
         text: 'Add Farm',
         svgLink: AssetPath.fertilizerboxPath,
+        onTap: () => Approuter.router.go(MyFarmsPage.routePath),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'My Farms',
         svgLink: AssetPath.fertilizerboxPath,
+        onTap: () => Approuter.router.go(MyFarmsPage.routePath),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'Crop Selector',
         svgLink: AssetPath.cropSelectoprIconPath,
+        onTap: () => Approuter.router.go(CropSelector.routePath),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'Fertilizer Calculator',
         svgLink: AssetPath.fertilizerboxPath,
+        onTap: () => showTextSnackbar('coming soon'),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'Buy Products',
         svgLink: AssetPath.shoppingCartPath,
+        onTap: () => Approuter.router.go(StorePage.routePath),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'Weather',
         svgLink: AssetPath.weatherIconPath,
+        onTap: () => showTextSnackbar('coming soon'),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'Recent News',
         svgLink: AssetPath.newsIconPath,
+        onTap: () => showTextSnackbar('coming soon'),
       ),
-      const ToolsItem(
+      ToolsItem(
         text: 'Government Schemes',
         svgLink: AssetPath.articlesIconPath,
+        onTap: () => showTextSnackbar('coming soon'),
       ),
     ];
 
